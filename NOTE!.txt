@@ -1,0 +1,19 @@
+Go to the selected file: D:\xampp\htdocs\mage2\vendor\magento\framework\View\Element\Template\File\Validator.php
+and replace the code in the function below (if you cant see admin login panel).
+
+
+
+protected function isPathInDirectories($path, $directories)
+    {
+        if (!is_array($directories)) {
+            $directories = (array)$directories;
+        }
+        $realPath = $this->fileDriver->getRealPath($path);
+        // $realPath = str_replace('\\', '/', $this->fileDriver->getRealPath($path));
+        $realPath = str_replace('\\', '/', $realPath);
+        foreach ($directories as $directory) {
+            if (0 === strpos($realPath, $directory)) {
+                return true;
+            }
+        }
+        return false;
