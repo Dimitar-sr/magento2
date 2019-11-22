@@ -17,3 +17,8 @@ protected function isPathInDirectories($path, $directories)
             }
         }
         return false;
+
+
+
+
+If Magento is not showing sample data even tho it is installed go to php.ini file and increase memory limit to 4gb at least.
